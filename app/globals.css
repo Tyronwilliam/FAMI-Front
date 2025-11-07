@@ -1,21 +1,113 @@
+/* Tailwind base */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* External animations */
+/* @import "tw-animate-css"; */
+
+/* Root variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(0.99 0.01 90);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.23 0.09 155);
+  --primary-foreground: oklch(0.99 0.01 90);
+  --secondary: oklch(0.73 0.12 70);
+  --secondary-foreground: oklch(0.15 0 0);
+  --muted: oklch(0.95 0.04 80);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.73 0.12 70);
+  --accent-foreground: oklch(0.15 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0.01 90);
+  --border: oklch(0.9 0.01 90);
+  --input: oklch(0.9 0.01 90);
+  --ring: oklch(0.23 0.09 155);
+  --radius: 0.5rem;
+  /* Sidebar variables */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --spacing-8: 2rem;
+  --spacing-4: 1rem; /* Tailwind spacing[4] */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base layer */
+@layer base {
+  * {
+    @apply border-border outline-ring;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  @font-face {
+    font-family: "Big Noodle Thing";
+    src: local("Impact"), local("Arial Black");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Utilities layer */
+@layer utilities {
+  /* Custom border & outline classes */
+  .border-border {
+    border-color: var(--border);
+  }
+
+  .outline-ring {
+    outline-color: var(--ring);
+  }
+
+  .font-display {
+    font-family: var(--font-display, sans-serif);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradients */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #0e4c2a 0%, #1a7a4a 100%);
+  }
+
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, #efaa30 0%, #f5c05e 100%);
+  }
+
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, #efaa30 0%, #feeacc 100%);
+  }
+
+  .bg-gradient-green-beige {
+    background: linear-gradient(135deg, #0e4c2a 0%, #feeacc 100%);
+  }
+
+  .bg-gradient-radial-yellow {
+    background: radial-gradient(circle at top, #efaa30 0%, #e89820 100%);
+  }
+
+  .bg-gradient-radial-green {
+    background: radial-gradient(circle at center, #0e4c2a 0%, #083319 100%);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
