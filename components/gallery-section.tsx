@@ -18,12 +18,13 @@ export default function GallerySection({ datas }: { datas: any }) {
       <div className="container mx-auto px-4">
         {/* Gros titre */}
         {datas?.Gros_Titre?.label && (
-          <h2 className="font-display text-5xl md:text-7xl text-center text-foreground mb-16">
+          // <h2 className="font-display text-5xl md:text-7xl text-center text-foreground mb-16">
+          <h2 className="font-display text-5xl md:text-7xl text-center text-[#0e4c2a]  mb-16">
             {datas.Gros_Titre.label}
           </h2>
         )}
 
-        <div className="w-[66.66%] mx-auto flex flex-wrap gap-4 md:p-4 items-center justify-center">
+        <div className="lg:w-[66.66%] mx-auto flex flex-wrap gap-4 md:p-4 items-center justify-center">
           {sortedItems.map((item: any) => {
             const src = `${process.env.NEXT_PUBLIC_STRAPI_URL || ""}${
               item.url
@@ -56,7 +57,7 @@ export default function GallerySection({ datas }: { datas: any }) {
             return (
               <div
                 key={item.id}
-                className="w-1/2 sm:w-1/3 md:w-auto max-w-[49%] h-fit rounded-lg overflow-hidden shadow-md"
+                className="sm:w-1/3 md:w-auto w-full  md:max-w-[60%]  lg:max-w-[48%] h-fit rounded-lg overflow-hidden shadow-md"
               >
                 <img
                   src={src}

@@ -53,8 +53,8 @@ export default function HeroSection({ datas }: HeroSectionProps) {
             className="
               w-48 h-auto 
               md:w-72 
-              lg:w-96 
-              xl:w-[500px] 
+              lg:w-80 
+              xl:w-[400px] 
               mb-6
               object-contain
             "
@@ -66,8 +66,8 @@ export default function HeroSection({ datas }: HeroSectionProps) {
         )}
         {/* Sous-titres */}
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-white/90 mb-8">
-          {sousTitres.slice(0, 2).map((item: any) => (
-            <div key={item.id} className="flex items-center gap-2">
+          {sousTitres.map((item: any) => (
+            <div key={item.id} className="flex items-center gap-2 ">
               {item.ajouter_icone && item.icone === "location" && (
                 <MapPin size={20} />
               )}
@@ -78,19 +78,6 @@ export default function HeroSection({ datas }: HeroSectionProps) {
             </div>
           ))}
         </div>{" "}
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-white/90 mb-8">
-          {sousTitres.slice(-1).map((item: any) => (
-            <div key={item.id} className="flex items-center gap-2">
-              {item.ajouter_icone && item.icone === "location" && (
-                <MapPin size={20} />
-              )}
-              {item.ajouter_icone && item.icone === "time" && (
-                <Clock size={20} />
-              )}
-              <span className="text-lg md:text-xl">{item.label}</span>
-            </div>
-          ))}{" "}
-        </div>
         {/* Redirections / boutons */}
         <div className="flex flex-col sm:flex-row gap-4">
           {redirections.map((r: any) => (
@@ -98,10 +85,10 @@ export default function HeroSection({ datas }: HeroSectionProps) {
               key={r.id}
               asChild
               size="lg"
-              className="bg-gradient-secondary text-accent-foreground hover:opacity-90 text-lg px-8 py-6 border-0"
+              className="max-w-[300px] md:w-fit bg-gradient-secondary text-gradient-primary  hover:opacity-90 text-lg px-8 py-6 border-0"
             >
-              <a href={`#${r.identifiant.replace(/\s+/g, "-")}`}>
-                {r.identifiant}
+              <a href={`#${r.content.label.replace(/\s+/g, "-")}`}>
+                {r.content.label}
               </a>
             </Button>
           ))}

@@ -11,7 +11,8 @@ export default function AboutSection({ datas }: { datas: any }) {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {datas?.Gros_Titre?.label && (
-            <h2 className="font-display text-5xl md:text-7xl text-center text-foreground mb-16">
+            // <h2 className="font-display text-5xl md:text-7xl text-center text-foreground mb-16">
+            <h2 className="font-display text-5xl md:text-7xl text-center text-[#efaa30] mb-16">
               {datas.Gros_Titre.label}
             </h2>
           )}
@@ -19,7 +20,7 @@ export default function AboutSection({ datas }: { datas: any }) {
           {blocks.map((block: any, index: number) => (
             <div
               key={block.id}
-              className={`grid md:grid-cols-2 gap-12 items-center mb-16`}
+              className={`grid md:grid-cols-2 gap-12 items-center mb-16 `}
             >
               {/* Texte */}
               <div

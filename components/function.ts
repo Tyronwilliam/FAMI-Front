@@ -6,9 +6,9 @@ export async function fetchAPI(path: string) {
     headers: {
       "Content-Type": "application/json",
     },
-    next: { revalidate: 60 }, // Cache 60s pour performance & SEO
+    cache: "no-store",
+    // next: { revalidate: 0 }, // Cache 60s pour performance & SEO
   });
-  console.log(res, "RES");
   if (!res.ok) {
     throw new Error(`Erreur lors du fetch Strapi : ${res.statusText}`);
   }

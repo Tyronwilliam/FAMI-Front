@@ -23,7 +23,7 @@ export const pageRequests = {
     // Strapi gère déjà les populates en backend (config API)
     const data = await fetchAPI(`/api/site?pLevel`);
 
-    console.log(data.data, "FRERE");
+    console.log(data.data, "fetchBodyPage");
     if (!data?.data.General) {
       console.warn(`⚠️ Aucune page trouvée pour le slug: `);
       return null;

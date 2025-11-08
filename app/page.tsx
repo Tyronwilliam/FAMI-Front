@@ -1,12 +1,10 @@
 import ElementRenderer, { pageRequests } from "@/components/element-renderer";
 
 export default async function Home() {
-  const slug = "accueil";
-
   const page = await pageRequests.fetchBodyPage();
-  console.log(page, "OUAIS");
+  console.log(page, "Home");
 
-  if (!page) return <div>Page non trouvée</div>;
+  if (!page) return <div>Data non trouvée</div>;
 
   return (
     <main className="min-h-screen">

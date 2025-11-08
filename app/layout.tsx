@@ -1,26 +1,27 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
+import type React from "react";
+import type { Metadata } from "next";
+import "./globals.css";
+import { mularSlim, sansSerifBook, bigNoodle } from "@/fonts";
 
 export const metadata: Metadata = {
   title: "Juju & Max - Restaurant & Résidence de Tablerie à Montreuil",
-  description: "Restaurant moderne et convivial à Montreuil. Découvrez notre cuisine et notre ambiance chaleureuse.",
+  description:
+    "Restaurant moderne et convivial à Montreuil. Découvrez notre cuisine et notre ambiance chaleureuse.",
   generator: "v0.app",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.className} font-sans antialiased`}>
+      <body
+        className={`${mularSlim.variable} ${sansSerifBook.variable} ${bigNoodle.variable} font-sans antialiased`}
+      >
         {children}
       </body>
     </html>
-  )
+  );
 }

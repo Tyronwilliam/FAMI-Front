@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mularSlim: ["var(--font-mularSlim)", "sans-serif"],
+        sansSerifBook: ["var(--font-sansSerifBook)", "sans-serif"],
+        bigNoodle: ["var(--font-bigNoodle)", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

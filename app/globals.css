@@ -40,6 +40,57 @@
   --spacing-8: 2rem;
   --spacing-4: 1rem; /* Tailwind spacing[4] */
 }
+/* -------------------------------------------------
+   TYPOGRAPHIE GLOBALE
+   Chaque police vient de next/font/local → variables CSS
+-------------------------------------------------- */
+
+:root {
+  /* font-synthesis: none; */
+  /* text-rendering: optimizeLegibility; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------------
+   TITRES — BIG NOODLE TITLING
+------------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-mularSlim leading-relaxed font-bold tracking-wide;
+  text-transform: uppercase;
+  line-height: 1.1;
+  /* font-family: var(--font-mularSlim, sans-serif); */
+}
+
+/* ------------------------------
+   TEXTES — MULARSLIM
+------------------------------ */
+p,
+li,
+blockquote {
+  @apply font-sansSerifBook leading-relaxed;
+  /* @apply font-bigNoodle font-bold tracking-wide; */
+  font-weight: 400;
+}
+
+/* ------------------------------
+   SPAN, LIENS, PETITS TEXTES — SANSSERIFBOOKFLF
+------------------------------ */
+span,
+a,
+small,
+strong,
+em {
+  @apply font-sansSerifBook;
+}
+body {
+  font-family: var(--font-mularSlim), sans-serif;
+}
 
 /* Base layer */
 @layer base {
@@ -49,14 +100,6 @@
 
   body {
     @apply bg-background text-foreground;
-  }
-
-  @font-face {
-    font-family: "Big Noodle Thing";
-    src: local("Impact"), local("Arial Black");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
   }
 }
 
@@ -71,11 +114,11 @@
     outline-color: var(--ring);
   }
 
-  .font-display {
-    font-family: var(--font-display, sans-serif);
+  /* .font-display {
+    font-family: var(--font-mularSlim, sans-serif);
     letter-spacing: 0.02em;
     text-transform: uppercase;
-  }
+  } */
 
   .text-balance {
     text-wrap: balance;
@@ -85,11 +128,21 @@
   .bg-gradient-primary {
     background: linear-gradient(135deg, #0e4c2a 0%, #1a7a4a 100%);
   }
-
-  .bg-gradient-secondary {
-    background: linear-gradient(135deg, #efaa30 0%, #f5c05e 100%);
+  .text-gradient-primary {
+    color: #105733;
   }
-
+  .text-jaune {
+    color: #efaa30;
+  }
+  .bg-gradient-secondary {
+    background: #f5c05e;
+    /* background: linear-gradient(135deg, #efaa30 0%, #f5c05e 80%); */
+    /* background: linear-gradient(135deg, #efaa30 00%, #f5c05e 50%); */
+    /* background: #efaa30; */
+  }
+  .bg-gray {
+    background: var(--muted-foreground);
+  }
   .bg-gradient-warm {
     background: linear-gradient(135deg, #efaa30 0%, #feeacc 100%);
   }

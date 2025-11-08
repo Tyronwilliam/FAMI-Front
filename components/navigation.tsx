@@ -48,11 +48,11 @@ export default function Navigation({ datas }: NavigationProps) {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-4 flex md:items-center justify-between md:justify-center">
         {/* Logo */}
         <a
           href="#hero"
-          className="flex items-center font-display text-2xl md:text-3xl text-foreground"
+          className="flex items-center  font-display text-2xl md:text-3xl text-foreground"
         >
           {datas?.logo ? (
             <img
@@ -64,20 +64,20 @@ export default function Navigation({ datas }: NavigationProps) {
                     }`
               }
               alt={datas.logo.name}
-              className="h-8 md:h-20 mr-2"
+              className="h-8 md:h-20 mr-2 text-sm"
             />
           ) : null}
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center md:mx-auto gap-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={
                 link.url ?? `#${link.label.toLowerCase().replace(/\s+/g, "-")}`
               }
-              className="text-secondary hover:text-primary transition-colors duration-300"
+              className="text-xl text-secondary hover:text-primary transition-colors duration-300"
             >
               {link.label}
             </a>

@@ -35,49 +35,55 @@ export default function MenuSection({ datas }: { datas: any }) {
   return (
     <section
       id={datas.section ?? "menu"}
+      // className="py-20 md:py-32 bg-muted"
       className="py-20 md:py-32 bg-gradient-secondary"
+      // className="py-20 md:py-32 bg-gradient-secondary"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Gros titre */}
-          <h2 className="font-display text-5xl md:text-7xl text-accent-foreground mb-6">
+          {/* <h2 className="font-display text-5xl md:text-7xl text-accent-foreground mb-6"> */}
+          <h2 className="font-display text-5xl md:text-7xl text-[#0e4c2a] mb-6">
             {grosTitre}
           </h2>
 
           {/* Sous-titre */}
-          <p className="text-lg md:text-xl text-accent-foreground/80 mb-12 leading-relaxed">
+          {/* <p className="text-lg md:text-xl text-accent-foreground/80 mb-12 leading-relaxed"> */}
+          <p className="text-lg md:text-xl lg:text-2xl text-[#0e4c2a] mb-12 leading-relaxed">
             {sousTitre}
           </p>
 
           {/* Cards */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {/* <div className="grid md:grid-cols-2 gap-8 mb-12">
             {cards.map((card: any) => (
               <div
                 key={card.id}
-                className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="bg-muted border-[#0e4c2a] rounded-lg p-8 shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Icône */}
-                {card.icone && iconMap[card.icone]}
+          {/* {card.icone && iconMap[card.icone]} */}
 
-                {/* Titre */}
-                {card.titre?.label && (
-                  <h3 className="font-display text-2xl text-foreground mb-3">
+          {/* Titre */}
+          {/* {card.titre?.label && (
+                  // <h3 className="font-display text-2xl text-foreground mb-3">
+                  <h3 className="font-display text-2xl text-[#0e4c2a] mb-3">
                     {card.titre.label}
                   </h3>
-                )}
+                )} */}
 
-                {/* Sous-titre */}
-                {card.sous_titre?.label && (
-                  <p className="text-muted-foreground leading-relaxed">
+          {/* Sous-titre */}
+          {/* {card.sous_titre?.label && (
+                  <p className="text-[#0e4c2a] leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                     {card.sous_titre.label}
                   </p>
                 )}
               </div>
             ))}
-          </div>
+          </div>  */}
 
           {/* Redirections */}
-          <div className="flex  gap-4 justify-center">
+          <div className="flex gap-4 justify-center">
             {redirections.map((r: any) => {
               const pdfUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL || ""}${
                 r.content?.image?.url
@@ -90,7 +96,7 @@ export default function MenuSection({ datas }: { datas: any }) {
                   <Button
                     asChild
                     size="lg"
-                    className="bg-gradient-primary text-white hover:opacity-90 border-0"
+                    className="bg-gradient-primary text-2xl text-white hover:opacity-90 border-0  p-8"
                   >
                     <a href={pdfUrl} target="_blank" rel="noopener noreferrer">
                       {r.content?.label}
