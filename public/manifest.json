@@ -1,0 +1,21 @@
+{
+  "name": "Fami Restaurant",
+  "short_name": "Fami",
+  "description": "Recyclerie et tablerie réunionnaise à Belleville, Paris 20e.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#efaa30",
+  "theme_color": "#efaa30",
+  "icons": [
+    {
+      "src": "/icons/192.ico",
+      "sizes": "192x192",
+      "type": "image/ico"
+    },
+    {
+      "src": "/icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

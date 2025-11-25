@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://famirestaurant.com
+
+# Sitemaps
+Sitemap: https://famirestaurant.com/sitemap.xml

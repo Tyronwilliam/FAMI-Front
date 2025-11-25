@@ -135,10 +135,8 @@ body {
     color: #efaa30;
   }
   .bg-gradient-secondary {
-    background: #f5c05e;
-    /* background: linear-gradient(135deg, #efaa30 0%, #f5c05e 80%); */
-    /* background: linear-gradient(135deg, #efaa30 00%, #f5c05e 50%); */
-    /* background: #efaa30; */
+    background: #efaa30;
+
   }
   .bg-gray {
     background: var(--muted-foreground);
